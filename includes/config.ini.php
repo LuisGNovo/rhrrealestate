@@ -1,0 +1,33 @@
+<?php
+/*
+ * Archivo de configuración del sitio según el entorno de trabajo
+ *
+ */
+
+// Obtengo el path del archivo  de configuración
+$local_path = dirname(__FILE__);
+$env_file_path = $local_path . '/config/env.php';
+
+// Verifico que exista
+// Ver que hacer en este caso
+if( !file_exists($env_file_path) ){
+    echo "No existe el archivo de configuración del sitio";
+    exit();
+}
+
+// Obtengo el enviroment de trabajo
+// Ver que hacer si no existe contenido
+if( !($env = include($env_file_path)) ){
+    echo "No se especifico el ambiente de trabajo";
+}
+
+$config_path = $local_path . '/config/' . $env . '.ini';
+
+$config = parse_ini_file($config_path, true);
+
+// Constantes del sitio
+define('PATH_BASE', dirname(dirname(__FILE__)) . '/');
+
+define('PATH_LIB', PATH_BASE . 'lib/');
+define('PATH_LIB_CLASSES', PATH_LIB . 'classes/');
+?>

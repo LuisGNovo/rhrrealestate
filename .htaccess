@@ -1,0 +1,16 @@
+php_value max_execution_time 30
+php_value memory_limit -1
+
+AddDefaultCharset utf-8
+
+Options -Indexes
+
+DirectoryIndex core.php
+
+RewriteEngine on
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . core.php?%{QUERY_STRING} [L]
