@@ -37,8 +37,9 @@ $DB->debug = false;
 //*******************************************************
 require PATH_LIB_CLASSES.'smarty/libs/Smarty.class.php';
 $Smarty							= new Smarty();
-$Smarty -> error_reporting		= E_ALL & ~ E_NOTICE;
-$Smarty -> caching				= false;
-$Smarty -> cache_lifetime		= 1;
+$Smarty->error_reporting		= E_ALL & ~ E_NOTICE;
+$Smarty->caching				= false;
+$Smarty->cache_lifetime 		= 1;
+$Smarty->setTemplateDir('./templates/');
 //*******************************************************
 ?>

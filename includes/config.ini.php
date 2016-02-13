@@ -30,4 +30,12 @@ define('PATH_BASE', dirname(dirname(__FILE__)) . '/');
 
 define('PATH_LIB', PATH_BASE . 'lib/');
 define('PATH_LIB_CLASSES', PATH_LIB . 'classes/');
+
+define('PATH_ACCIONES', PATH_BASE . 'acciones/');
+define('PATH_PROCESOS', PATH_BASE . 'procesos/');
+
+define('PATH_ESTILOS', '/css/');
+define('PATH_JAVASCRIPTS', '/js/');
+define('PATH_IMAGENES', '/images/');
+define('PATH_UPLOADS', '/uploads/');
 ?>
