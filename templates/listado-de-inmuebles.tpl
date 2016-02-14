@@ -11,7 +11,7 @@
           <div class="row">
   <div class="span3"><div class="wellside"><h4 class="side_heading">Refine Search</h4><hr style="margin:0px;"><div style="padding-top:10px;"><form class="form-search">
   <input type="text" class="input-medium search-query">
-  <button type="submit" class="btn btn-warning">Search</button>
+  <button type="submit" class="btn btn-warning">Buscar</button>
 </form></div></div>
 
 <div class="wellside"><h4 class="side_heading">Browse by Category</h4><hr style="margin:0px;"><div style="padding-top:10px;"><ul class="nav nav-tabs nav-stacked">
