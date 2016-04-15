@@ -4,38 +4,23 @@
 
     <div class="container">
         <div class="row">
-            <div class="span4">
+            <div class="span6">
 
-                <h2 class="headingfoot">latest news</h2>
+                <h2 class="headingfoot">Acerca de nosotros</h2>
 
                 <ul class="unstyled">
 
                     <li>
-
-                        <h4 class="footlinks"><a href="#">Finding the Right Property</a><i style="padding-left:5px; margin-top:5px;" class="icon-chevron-right icon"></i></h4>
-
-                        <p class="foottext"> Lorem Ipsum is simply dummy text of the printing.</p>
+                        <p class="foottext"> RHR Real Estate, es una empresa de servicio inmobiliario con una experiencia de 35 años en el mercado, especializándose y adaptándose a los cambios y necesidades de sus clientes. Cuenta con  personal calificado para el servicio exclusivo de cada cliente, basándose en la búsqueda del inmueble acorde a  intereses, gustos y deseos del que llega a nuestra empresa. Gestionamos en forma personalizada las operaciones en  propiedades particulares, para empresas o inversores.</p>
+                        <p class="foottext"><a href="/acerca-de-nosotros.html">Continuar leyendo.</a></p>
                     </li>
 
-                    <li>
-
-                        <h4 class="footlinks"><a href="#">Getting into Commercial Real Estate</a><i style="padding-left:5px; margin-top:5px;" class="icon-chevron-right icon"></i></h4>
-
-                        <p class="foottext">Lorem Ipsum is simply dummy text of the printing.</p>
-                    </li>
-
-                    <li>
-
-                        <h4 class="footlinks"><a href="#">Investing in Foreclosures</a><i style="padding-left:5px; margin-top:5px;" class="icon-chevron-right icon"></i></h4>
-
-
-                        <p class="foottext"> Lorem Ipsum is simply dummy text of the printing.</p>
-                    </li>
                 </ul>
 
             </div>
+{*
             <div class="span4">
-                <h2 class="headingfoot">about us</h2>
+                <h2 class="headingfoot">Acerca de nosotros</h2>
 
                 <ul class="unstyled">
 
@@ -57,33 +42,31 @@
                     </li>
                 </ul>
             </div>
-            <div class="span4">
+*}
+            <div class="span6">
 
-                <h2 class="headingfoot">get in touch</h2>
+                <h2 class="headingfoot">Contactenos</h2>
 
                 <ul class="unstyled">
 
                     <li class="foot_list">
-                        <span class="foot_contact"><i class="icon-envelope icon iconsin"></i><a href="#"> info@rhrrealestate.com.ar</a></span>
+                        <span class="foot_contact"><i class="icon-envelope icon iconsin"></i><a href="mailto:info@rhrrealestate.com.ar"> info@rhrrealestate.com.ar</a></span>
                     </li>
 
                     <li  class="foot_list">
-                        <span class="foot_contact"><i class="icon-user icon iconsin"></i>P +54.011-4952.7623</span>
+                        <span class="foot_contact"><i class="icon-user icon iconsin"></i>Tél.: +54.011-4952.7623</span>
                     </li>
 
                     <li  class="foot_list">
-                        <span class="foot_contact"><i class="icon-user icon iconsin"></i>P +54.011-5815.4406</span>
+                        <span class="foot_contact"><i class="icon-user icon iconsin"></i>Cel.: +54.011-5815.4406</span>
                     </li>
 
                     <li class="foot_list">
 
-                        <span class="foot_contact"><i class="icon-map-marker icon iconsin"></i>Av Rivadavia 2151, Ciudad Autonoma de Buenos Aires, Buenos Aires, Argentina </span>
+                        <span class="foot_contact"><i class="icon-map-marker icon iconsin"></i>
+                        Av Rivadavia 2151, Ciudad Autonoma de Buenos Aires, Buenos Aires, Argentina </span>
                     </li>
 
-                    <li class="foot_list">
-
-                        <span class="foot_contact"><i class="icon-time icon iconsin"></i>Office Hours: (Monday-Friday) 8AM - 6PM </span>
-                    </li>
                     <li class="foot_logo">
                         <a class="btnlogo"></a>    </li>
                 </ul>
@@ -105,6 +88,9 @@
 
 <!-- Le javascript
 ================================================== -->
+{foreach from=$site_footer_js item=footer_js}
+    <script type="text/javascript" src="{$assets_path_js}{$footer_js}"></script>
+{/foreach}
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script src="assets/js/bootstrap.js"></script>

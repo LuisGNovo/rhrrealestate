@@ -46,6 +46,23 @@
                 continuous: true,
                 controlsShow:    false,
             });
+
+            // Idioma
+            $('a[name="seleccionar-idioma"]').click(function(){
+                var lang = $(this).attr('rel');
+                $.ajax({
+                    url: '/procesos/setear-idioma',
+                    type: 'GET',
+                    dataType: 'json',
+                    cache: false,
+                    data: { lang:lang},
+                    success: function(data){
+                        location.reload(true);
+                    },
+                    timeout: 3000  // (1000=1 segundo)
+                });
+            });
+
         });
     </script>
 
@@ -92,7 +109,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="/">Real Estate </a>
+            <a class="brand" href="/">RHR Real Estate </a>
             <div class="nav-collapse">
                 <ul class="nav">
                     <li><a href="/">Inicio</a></li>
@@ -101,6 +118,7 @@
                     <li><a href="/listado-de-inmuebles.html?operacion=Alquiler+Temporario">Alquileres temporarios</a></li>
                     <li><a href="/formulario-de-busqueda.html">Busqueda</a></li>
                     <li><a href="/formulario-de-contacto.html">Contacto</a></li>
+                    <li><a href="/acerca-de-nosotros.html">Nosotros</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Más
@@ -114,19 +132,20 @@
                             <li><a href="/formulario-de-busqueda.html">Busqueda</a></li>
                             <li class="divider"></li>
                             <li><a href="/formulario-de-contacto.html">Contacto</a></li>
+                            <li><a href="/acerca-de-nosotros.html">Nosotros</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav pull-right">
-                    <li><a href="#">Idioma nombre</a></li>
+                    <li><a href="#">{$lang.NOMBRE_IDIOMA_CURRENT}</a></li>
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
 
 
                         <ul class="dropdown-menu">
-                            <li><a href="#">Español</a></li>
-                            <li><a href="#">Inglés</a></li>
+                            <li><a href="#" name="seleccionar-idioma" rel="ES">{$lang.NOMBRE_IDIOMA_ESPANIOL}</a></li>
+                            <li><a href="#" name="seleccionar-idioma" rel="EN">{$lang.NOMBRE_IDIOMA_INGLES}</a></li>
                         </ul>
                     <li>
                 </ul>

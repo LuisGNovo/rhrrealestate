@@ -9,35 +9,81 @@
 
 
           <div class="row">
-  <div class="span3"><div class="wellside"><h4 class="side_heading">Refine Search</h4><hr style="margin:0px;"><div style="padding-top:10px;"><form class="form-search">
-  <input type="text" class="input-medium search-query">
-  <button type="submit" class="btn btn-warning">Search</button>
-</form></div></div>
+  <div class="span3">
 
-<div class="wellside"><h4 class="side_heading">Browse by Category</h4><hr style="margin:0px;"><div style="padding-top:10px;"><ul class="nav nav-tabs nav-stacked">
-  <li>
-    <a href="#">Residential</a>
-  </li>
-  <li>
-    <a href="#">Industrial</a>
-  </li>
-  <li>
-    <a href="#">Land</a>
-  </li>
-   <li>
-    <a href="#">Commercial</a>
-  </li>
+<div class="wellside">
+    <h4 class="side_heading">Busqueda</h4>
+    <hr style="margin:0px;">
+    <div style="padding-top:10px;">
+        <form class="form-search" action="/listado-de-inmuebles.html" method="get">
+            <h6>Propiedad tipo</h6>
+            <select name="tipo" class="span2" style="text-align: center;">
+                <option value="">::Todos::</option>
+                {foreach from=$tipos_propiedad item=tipo}
+                    <option value="{$tipo.tipo}"{if $smarty.get.tipo == $tipo.tipo} selected="selected"{/if}>{$tipo.tipo}</option>
+                {/foreach}
+            </select>
+            <br /><br />
+            <h6>Tipo de operación</h6>
+            <select name="operacion" class="span2" style="text-align: center;">
+                <option value="">::Todas::</option>
+                {foreach from=$operaciones item=operacion}
+                    <option value="{$operacion.operacion}"{if $smarty.get.operacion == $operacion.operacion} selected="selected"{/if}>{$operacion.operacion|lower|capitalize}</option>
+                {/foreach}
+            </select>
+            <br /><br />
+            <button type="submit" class="btn btn-warning">Buscar</button>
+        </form>
+    </div>
+</div>
+{*
+<div class="wellside">
+    <h4 class="side_heading">Refine Search</h4>
+    <hr style="margin:0px;">
+    <div style="padding-top:10px;">
+        <form class="form-search">
+        <input type="text" class="input-medium search-query">
+        <button type="submit" class="btn btn-warning">Search</button>
+        </form>
+    </div>
+</div>
+*}
 
-  <li>
-    <a href="#">Foreclosures</a>
-  </li>
-    <li>
-    <a href="#"> Muiplex / Income Property</a>
-  </li>
+{*
+<div class="wellside">
+    <h4 class="side_heading">Browse by Category</h4>
+    <hr style="margin:0px;">
+    <div style="padding-top:10px;">
+        <ul class="nav nav-tabs nav-stacked">
+          <li>
+            <a href="#">Residential</a>
+          </li>
+          <li>
+            <a href="#">Industrial</a>
+          </li>
+          <li>
+            <a href="#">Land</a>
+          </li>
+           <li>
+            <a href="#">Commercial</a>
+          </li>
+          <li>
+            <a href="#">Foreclosures</a>
+            </li>
+            <li>
+            <a href="#"> Muiplex / Income Property</a>
+        </li>
+        </ul>
+    </div>
+</div>
+*}
 
-
-
-</ul></div></div> <div class="wellside"><h4 class="side_heading">Filter</h4><hr style="margin:0px;"><div style="padding-top:10px;"><div class="controls">
+{*
+<div class="wellside">
+    <h4 class="side_heading">Filter</h4>
+    <hr style="margin:0px;">
+    <div style="padding-top:10px;">
+        <div class="controls">
               <label class="checkbox">
                 <input type="checkbox"  value="option1">
                Rental
@@ -62,14 +108,17 @@ Condo       </label>
 
               <div style="padding:20px;"><label>Bedrooms</label><input class="span1" type="text" placeholder="from"> to <input class="span1" type="text" placeholder="to"></div>
 
-
-              </div><div class="caption">
+        </div>
+        <div class="caption">
   <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-  <div class="form-actions">
-    <a href="#" class="btn btn-danger">Reset</a>
-    <a href="#" class="btn">Search</a>
-  </div>
-</div></div></div>
+            <div class="form-actions">
+                <a href="#" class="btn btn-danger">Reset</a>
+                <a href="#" class="btn">Search</a>
+            </div>
+        </div>
+    </div>
+</div>
+*}
 
 </div>
   <div class="span9">
@@ -82,7 +131,7 @@ Condo       </label>
         <div class="alert">
   <div class="page-schres">
   <h4>
-<small> 145</small> Search Results for "House"
+<small> {$inmuebles_cantidad}</small> Inmueble{if $inmuebles_cantidad>1}s{/if} encontrado{if $inmuebles_cantidad>1}s{/if}
 
   </h4>
 </div>

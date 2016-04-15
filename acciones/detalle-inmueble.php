@@ -49,6 +49,10 @@ for($i=1; $i<=12; $i++){
     }
 }
 
+// JS para ser llamados en el footer del sitio
+$SITE_FOOTER_JS[]   = 'jquery.validate.min.js';
+$SITE_FOOTER_JS[]   = 'formulario-de-consultas.js';
+
 $Smarty->assign(array(
     'inmueble'                      => $inmueble, 
     'es_detalle_del_inmueble'       => true  

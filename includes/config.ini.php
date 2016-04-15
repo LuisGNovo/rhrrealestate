@@ -26,16 +26,24 @@ $config_path = $local_path . '/config/' . $env . '.ini';
 $config = parse_ini_file($config_path, true);
 
 // Constantes del sitio
+define('ENVIROMENT', $env);
+
+define('URI_PREFIX', $config['config']['folder_prefix']);
+
 define('PATH_BASE', dirname(dirname(__FILE__)) . '/');
 
-define('PATH_LIB', PATH_BASE . 'lib/');
-define('PATH_LIB_CLASSES', PATH_LIB . 'classes/');
+define('ASSETS_PATH_JS', URI_PREFIX . '/assets/js/');
+
+define('PATH_TEMPLATES', PATH_BASE . 'templates/');
 
 define('PATH_ACCIONES', PATH_BASE . 'acciones/');
 define('PATH_PROCESOS', PATH_BASE . 'procesos/');
 
-define('PATH_ESTILOS', '/css/');
-define('PATH_JAVASCRIPTS', '/js/');
+define('PATH_LIB', PATH_BASE . 'lib/');
+define('PATH_LIB_CLASSES', PATH_LIB . 'classes/');
+
+define('PATH_ESTILOS', URI_PREFIX . '/css/');
+define('PATH_JAVASCRIPTS', URI_PREFIX . '/js/');
 define('PATH_IMAGENES', '/images/');
 define('PATH_UPLOADS', '/uploads/');
 ?>

@@ -40,7 +40,9 @@ $Smarty							= new Smarty();
 $Smarty->error_reporting		= E_ALL & ~ E_NOTICE;
 $Smarty->caching				= false;
 $Smarty->cache_lifetime 		= 1;
-$Smarty->setTemplateDir('./templates/');
+$Smarty->setTemplateDir(PATH_BASE . 'templates')
+       ->setCompileDir(PATH_BASE . 'templates_c')
+       ->setCacheDir(PATH_BASE . 'cache');
 //*******************************************************
 
 //*******************************************************

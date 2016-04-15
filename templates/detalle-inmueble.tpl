@@ -55,23 +55,32 @@
 
         <div class="span3">
 
-            <ul class="nav nav-tabs nav-stacked" style="background:white; font-size:11px; ">
+            <ul class="nav nav-tabs nav-stacked" style="background:white; font-size:11px; " id="consultar-inmueble">
                 <li class="active" style="font-size:12px; font-weight:bold;">
                     <a href="#">Consultar este inmueble</a>
                 </li>
                 <li>
-                    <div style="padding:10px;">
-                        <input class="span2" type="text" placeholder="Name">
-                        <input class="span2" type="text" placeholder="Phone Number">
-                        <input class="span2" type="text" placeholder="Email">
-                        <textarea class="input-large" id="textarea" rows="3"></textarea>
+                    <div id="consultar-message-wait" class="alert alert-warn" style="padding:10px; display: none;">
+                        Enviando su consulta...
+                    </div>
+                    <div id="consultar-message-ok" class="alert alert-success" style="padding:10px; display: none;">
+                        <strong>Gracias!</strong> Su consulta ha sido enviada con exito.
+                    </div>
+                    <div id="consultar-message-error" class="alert alert-danger" style="padding:10px; display: none;">
+                        <strong>Error!</strong> Su consulta no pudo ser enviada.
+                    </div>
+                    <div style="padding:10px;" id="consultar-inmueble-content">
+                        <input class="span2" type="text" name="nombre" placeholder="Apellido y Nombre">
+                        <input class="span2" type="text" name="telefono" placeholder="Teléfono">
+                        <input class="span2" type="text" name="email" placeholder="Email">
+                        <textarea class="input-large" id="textarea" name="mensaje" rows="3"></textarea>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-medium">Consultar</button>
+                            <input type="hidden" name="inmueble" value="{$inmueble|json_encode|base64_encode}" />
+                            <input type="hidden" name="is-submit" value="1" />
+                            <button type="submit" name="enviar-consulta" class="btn btn-primary btn-medium">Consultar</button>
                         </div>
                     </div>
-
                 </li>
-
             </ul>
 {*
             <ul class="nav nav-tabs nav-stacked" style="background:white; font-size:11px; ">

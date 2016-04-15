@@ -45,8 +45,34 @@ if( !empty($where) ){
 
 $inmuebles = $DB->getAll($query);
 
+// Query para obtener los tipos de inmuebles
+$query = <<<query
+SELECT
+    DISTINCT(propiedad) AS tipo
+FROM
+    Inmuebles
+ORDER BY
+    tipo ASC;
+query;
+$tipos_propiedad = $DB->getAll($query);
+
+
+// Query para obtener las operaciones
+$query = <<<query
+SELECT
+    DISTINCT(operacion) AS operacion
+FROM
+    Inmuebles
+ORDER BY
+    operacion ASC;
+query;
+$operaciones = $DB->getAll($query);
+
 // Asigno las variables a Smarty
 $Smarty->assign(array(
-    'inmuebles'       => $inmuebles 
+    'tipos_propiedad'       => $tipos_propiedad,
+    'operaciones'           => $operaciones,
+    'inmuebles_cantidad'    => sizeof($inmuebles), 
+    'inmuebles'             => $inmuebles 
 ));
 ?>

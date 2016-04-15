@@ -6,11 +6,9 @@
             <div class="wellside">
                 <div id="slider">
                     <ul>
-                        <li><a href="#"><img src="assets/img/01.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="assets/img/02.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="assets/img/03.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="assets/img/04.jpg" alt="" /></a></li>
-                        <li><a href="#"><img src="assets/img/05.jpg" alt="" /></a></li>
+                        {foreach from=$ofertas item=oferta}
+                            <li><a href="/detalle-inmueble.html?id={$oferta.id}"><img class="img-style row1"  src="{$path_uploads}{$oferta.imagen}"  alt="" width="696px" height="241px" /></a></li>
+                        {/foreach}
                     </ul>
 
                 </div>
@@ -46,8 +44,9 @@
                         </select>
     -->
 
-                        <select name="tipo" id="select01" class="span3" style="text-align: center;">
-                            <option value="">::Propiedad tipo::</option>
+                        <h6>Propiedad tipo</h6>
+                        <select name="tipo" class="span3" style="text-align: center;">
+                            <option value="">::Todos::</option>
                             {foreach from=$tipos_propiedad item=tipo}
                                 <option value="{$tipo.tipo}">{$tipo.tipo}</option>
                             {/foreach}
@@ -66,8 +65,9 @@
                         <br />
                         *}
 
-                        <select name="operacion" id="select01" class="span3" style="text-align: center;">
-                            <option value="">::Operación::</option>
+                        <h6>Tipo de operación</h6>
+                        <select name="operacion" class="span3" style="text-align: center;">
+                            <option value="">::Todas::</option>
                             {foreach from=$operaciones item=operacion}
                                 <option value="{$operacion.operacion}">{$operacion.operacion|lower|capitalize}</option>
                             {/foreach}
@@ -75,7 +75,7 @@
 
                         <br />
 
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="submit" class="btn btn-warning">Buscar</button>
 
                     </fieldset>
 

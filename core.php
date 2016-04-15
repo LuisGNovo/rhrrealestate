@@ -15,18 +15,16 @@ if( !isset($_SESSION['LANGUAGE_CODE']) OR !in_array($_SESSION['LANGUAGE_CODE'], 
 }else{
     $language_code = $SESSION['LANGUAGE_CODE'];
 }
-switch($language_code){
-    case 'EN':
-        //
-        break;
-    case 'ES':
-    default:
-        //
-}
+
 
 //*******************************************************
 //*	INICIO DEL SITIO
 require	dirname(__FILE__) . '/includes/loader.php';
+//*******************************************************
+
+//*******************************************************
+//* IDIOMA
+require dirname(__FILE__) . '/includes/lang.php';
 //*******************************************************
 
 //*******************************************************
@@ -83,6 +81,13 @@ if( !$request_uri ){
         //****************************
 
         //****************************
+        // Ver inmueble
+        elseif( strpos($request_uri[0], 'acerca-de-nosotros') !== false ){
+            $accion_del_sitio_a_incluir = $request_uri[0];
+        }
+        //****************************
+
+        //****************************
         // Página no encontrada
         else{
             $accion_del_sitio_a_incluir = 'error-404';
@@ -99,8 +104,8 @@ if( $es_proceso === false && file_exists(PATH_ACCIONES . $accion_del_sitio_a_inc
     require PATH_ACCIONES . $accion_del_sitio_a_incluir . '.php';
 
 // Si es proceso
-}elseif( $es_proceso === true && file_exists(PATH_PROCESOS . $proceso_del_sitio_a_incluir) ){
-    require PATH_PROCESOS . $proceso_del_sitio_a_incluir;
+}elseif( $es_proceso === true && file_exists(PATH_PROCESOS . $proceso_del_sitio_a_incluir . '.php') ){
+    require PATH_PROCESOS . $proceso_del_sitio_a_incluir . '.php';
 
 // Muestro error
 }else{
@@ -116,6 +121,8 @@ if( $es_proceso === false && !empty($template) && $Smarty->templateExists($templ
         // ********
         'path_imagenes'     => PATH_IMAGENES,
         'path_uploads'      => PATH_UPLOADS,
+
+        'assets_path_js'    => ASSETS_PATH_JS, 
 
         // ********
         'site_css'          => $SITE_CSS,
