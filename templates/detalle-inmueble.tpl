@@ -77,6 +77,7 @@
                         <div class="form-actions">
                             <input type="hidden" name="inmueble" value="{$inmueble|json_encode|base64_encode}" />
                             <input type="hidden" name="is-submit" value="1" />
+                            <input type="hidden" name="uri-prefix" value="{$uri_prefix}" />
                             <button type="submit" name="enviar-consulta" class="btn btn-primary btn-medium">Consultar</button>
                         </div>
                     </div>

@@ -43,8 +43,9 @@ query;
 $inmueble = $DB->getRow($query);
 
 $inmueble['imagenes']   = array();
+
 for($i=1; $i<=12; $i++){
-    if( !empty($inmueble['imagen'.$i]) && file_exists( dirname(dirname(__FILE__)) . PATH_UPLOADS . $inmueble['imagen'.$i]) ){
+    if( !empty($inmueble['imagen'.$i]) ){
         $inmueble['imagenes'][]   = PATH_UPLOADS . $inmueble['imagen'.$i];
     }
 }

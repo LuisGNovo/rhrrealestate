@@ -16,7 +16,6 @@ if( !isset($_SESSION['LANGUAGE_CODE']) OR !in_array($_SESSION['LANGUAGE_CODE'], 
     $language_code = $SESSION['LANGUAGE_CODE'];
 }
 
-
 //*******************************************************
 //*	INICIO DEL SITIO
 require	dirname(__FILE__) . '/includes/loader.php';
@@ -36,10 +35,11 @@ $SITE_FOOTER_JS     = array();
 
 //*******************************************************
 //*	CHEQUEO DE LAACCIÓN A REALIZAR DEPENDIENDO DE LA URI
+
 $accion_del_sitio_a_incluir     = null;
 $proceso_del_sitio_a_incluir    = null;
 $template                       = '';
-$request_uri                    = trim($_SERVER['REQUEST_URI'], '/');
+$request_uri                    = ( !empty($_GET['uri']) ) ? trim($_GET['uri'], '/') : null;
 $es_proceso                     = false;
 
 if( !$request_uri ){
@@ -119,10 +119,13 @@ if( $es_proceso === false && !empty($template) && $Smarty->templateExists($templ
     // Agrego los css's y js's
     $Smarty->assign(array(
         // ********
+        'uri_prefix'        => '/' . trim(URI_PREFIX, '/'), 
         'path_imagenes'     => PATH_IMAGENES,
         'path_uploads'      => PATH_UPLOADS,
 
         'assets_path_js'    => ASSETS_PATH_JS, 
+        'assets_path_css'    => ASSETS_PATH_CSS, 
+        'assets_path_img'    => ASSETS_PATH_IMG, 
 
         // ********
         'site_css'          => $SITE_CSS,

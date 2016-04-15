@@ -15,7 +15,7 @@
     <h4 class="side_heading">Busqueda</h4>
     <hr style="margin:0px;">
     <div style="padding-top:10px;">
-        <form class="form-search" action="/listado-de-inmuebles.html" method="get">
+        <form class="form-search" action="{$uri_prefix}" method="get">
             <h6>Propiedad tipo</h6>
             <select name="tipo" class="span2" style="text-align: center;">
                 <option value="">::Todos::</option>
@@ -32,6 +32,7 @@
                 {/foreach}
             </select>
             <br /><br />
+            <input type="hidden" name="uri" value="listado-de-inmuebles.html" />
             <button type="submit" class="btn btn-warning">Buscar</button>
         </form>
     </div>
@@ -146,16 +147,16 @@ Condo       </label>
     <div class="thumbnail thumbnail-list">
       <img src="{$path_uploads}{$inmueble.imagen}" class="thumby" height="120px" width="120px" style="float: left; margin: 8px;" />
       <div class="caption">
-        <h5><a href="/detalle-inmueble.html?id={$inmueble.id}">{$inmueble.propiedad} en {$inmueble.operacion} | {$inmueble.ambientes} | {$inmueble.zona} | {$inmueble.localidad} | {$inmueble.direccion}</a></h5>
+        <h5><a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$inmueble.id}">{$inmueble.propiedad} en {$inmueble.operacion} | {$inmueble.ambientes} | {$inmueble.zona} | {$inmueble.localidad} | {$inmueble.direccion}</a></h5>
         <p>{$inmueble.descripcion|lower|capitalize|truncate:300:"...":true}</p>
 
         <h4 class="pull-left">{$inmueble.moneda|upper} ${$inmueble.precio}</h4>
 
           <p class="pull-right">
             {if $inmueble.estado == 'Disponible'}
-              <a href="/detalle-inmueble.html?id={$inmueble.id}" class="btn btn-primary">VER INMUEBLE</a>
+              <a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$inmueble.id}" class="btn btn-primary">VER INMUEBLE</a>
             {else}
-              <a href="/detalle-inmueble.html?id={$inmueble.id}" class="btn btn-danger">NO DISPONIBLE</a>
+              <a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$inmueble.id}" class="btn btn-danger">NO DISPONIBLE</a>
             {/if}
           </p>
 

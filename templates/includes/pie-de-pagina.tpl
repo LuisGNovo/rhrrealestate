@@ -12,7 +12,7 @@
 
                     <li>
                         <p class="foottext"> RHR Real Estate, es una empresa de servicio inmobiliario con una experiencia de 35 años en el mercado, especializándose y adaptándose a los cambios y necesidades de sus clientes. Cuenta con  personal calificado para el servicio exclusivo de cada cliente, basándose en la búsqueda del inmueble acorde a  intereses, gustos y deseos del que llega a nuestra empresa. Gestionamos en forma personalizada las operaciones en  propiedades particulares, para empresas o inversores.</p>
-                        <p class="foottext"><a href="/acerca-de-nosotros.html">Continuar leyendo.</a></p>
+                        <p class="foottext"><a href="{$uri_prefix}/acerca-de-nosotros.html">Continuar leyendo.</a></p>
                     </li>
 
                 </ul>
@@ -93,6 +93,6 @@
 {/foreach}
 <!-- Placed at the end of the document so the pages load faster -->
 
-<script src="assets/js/bootstrap.js"></script>
+<script src="{$assets_path_js}bootstrap.js"></script>
 </body>
 </html>

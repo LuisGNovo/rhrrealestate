@@ -10,9 +10,10 @@ $(document).ready(function(){
         var inmueble = $('input[name="inmueble"]', formulario_consultas).val();
         var is_submit = $('input[name="is-submit"]', formulario_consultas).val();
         var mensaje = $('textarea[name="mensaje"]', formulario_consultas).val();
+        var uri_prefix = $('input[name="uri-prefix"]', formulario_consultas).val();
 
         $.ajax({
-            url: '/procesos/consulta-de-inmueble',
+            url: uri_prefix + '?uri=procesos/consulta-de-inmueble',
             type: 'POST',
             dataType: 'json',
             cache: false,

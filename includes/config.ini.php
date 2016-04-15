@@ -33,6 +33,8 @@ define('URI_PREFIX', $config['config']['folder_prefix']);
 define('PATH_BASE', dirname(dirname(__FILE__)) . '/');
 
 define('ASSETS_PATH_JS', URI_PREFIX . '/assets/js/');
+define('ASSETS_PATH_CSS', URI_PREFIX . '/assets/css/');
+define('ASSETS_PATH_IMG', URI_PREFIX . '/assets/img/');
 
 define('PATH_TEMPLATES', PATH_BASE . 'templates/');
 
@@ -42,8 +44,8 @@ define('PATH_PROCESOS', PATH_BASE . 'procesos/');
 define('PATH_LIB', PATH_BASE . 'lib/');
 define('PATH_LIB_CLASSES', PATH_LIB . 'classes/');
 
-define('PATH_ESTILOS', URI_PREFIX . '/css/');
-define('PATH_JAVASCRIPTS', URI_PREFIX . '/js/');
+define('PATH_ESTILOS', '/css/');
+define('PATH_JAVASCRIPTS', '/js/');
 define('PATH_IMAGENES', '/images/');
 define('PATH_UPLOADS', '/uploads/');
 ?>

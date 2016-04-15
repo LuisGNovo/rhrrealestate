@@ -7,7 +7,7 @@
                 <div id="slider">
                     <ul>
                         {foreach from=$ofertas item=oferta}
-                            <li><a href="/detalle-inmueble.html?id={$oferta.id}"><img class="img-style row1"  src="{$path_uploads}{$oferta.imagen}"  alt="" width="696px" height="241px" /></a></li>
+                            <li><a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}"><img class="img-style row1"  src="{$path_uploads}{$oferta.imagen}"  alt="" width="696px" height="241px" /></a></li>
                         {/foreach}
                     </ul>
 
@@ -20,7 +20,7 @@
                 <h4><i style="padding-right:10px; margin-top:3px" class="icon-search"></i>Buscar propiedades</h4>
                 <hr>
 
-                <form action="/listado-de-inmuebles.html" method="get">
+                <form action="{$uri_prefix}" method="get">
 
                     <fieldset>
 <!--
@@ -75,6 +75,7 @@
 
                         <br />
 
+                        <input type="hidden" name="uri" value="listado-de-inmuebles.html" />
                         <button type="submit" class="btn btn-warning">Buscar</button>
 
                     </fieldset>
@@ -103,70 +104,13 @@
                     <p>{$oferta.descripcion|lower|truncate:320:"...":true}</p>
                     <br />
                     <p>
-                        <a href="/detalle-inmueble.html?id={$oferta.id}" class="btn btn-warning">Más info</a>
+                        <a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}" class="btn btn-warning">Más info</a>
                     </p>
                 </div>
             </div>
         </li>
         {/foreach}
-<!--
-        <li class="span3">
-            <div class="thumbnail">
-                <img src="assets/img/thumb_2.jpg" alt="">
-                <div class="caption">
-                    <h3><a href="#">Aweber Property</a></h3>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta t.</p>
-                    <br />
-                    <p>
-                        <a href="#" class="btn btn-warning">More info</a>
-                    </p>
-                </div>
-            </div>
-        </li>
 
-
-        <li class="span3">
-            <div class="thumbnail">
-                <a href="assets/img/thumb_1.jpg"  title="Beautiful, isn't it?"> <img src="assets/img/thumb_3.jpg"   alt="" />   </a>         <div class="caption">
-                    <h3><a href="#">Sunview Property</a></h3>
-
-
-
-
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta t.</p>
-
-                    <br>
-                    <p>
-
-                        <a href="#" class="btn btn-warning">More info</a>
-
-                    </p>
-                </div>
-            </div>
-        </li>
-
-        <li class="span3">
-            <div class="thumbnail">
-                <img src="assets/img/thumb_4.jpg" alt="">            <div class="caption">
-                    <h3><a href="#">Beachhouse Property</a></h3>
-
-
-
-
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta t.</p>
-
-                    <br>
-                    <p>
-
-                        <a href="#" class="btn btn-warning">More info</a>
-
-                    </p>
-                </div>
-            </div>
-        </li>
--->
     </ul>
 
     <!-- End Featured Listings -->
