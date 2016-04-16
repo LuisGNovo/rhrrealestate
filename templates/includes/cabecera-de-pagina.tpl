@@ -118,7 +118,6 @@
                     <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">Ventas</a></li>
                     <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">Alquileres</a></li>
                     <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">Alquileres temporarios</a></li>
-                    <li><a href="{$uri_prefix}?uri=formulario-de-busqueda.html">Busqueda</a></li>
                     <li><a href="{$uri_prefix}?uri=formulario-de-contacto.html">Contacto</a></li>
                     <li><a href="{$uri_prefix}?uri=acerca-de-nosotros.html">Nosotros</a></li>
                     <li class="dropdown">
@@ -131,7 +130,6 @@
                             <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">Ventas</a></li>
                             <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">Alquileres</a></li>
                             <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">Alquileres temporarios</a></li>
-                            <li><a href="{$uri_prefix}?uri=formulario-de-busqueda.html">Busqueda</a></li>
                             <li class="divider"></li>
                             <li><a href="{$uri_prefix}?uri=formulario-de-contacto.html">Contacto</a></li>
                             <li><a href="{$uri_prefix}?uri=acerca-de-nosotros.html">Nosotros</a></li>

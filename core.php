@@ -39,14 +39,15 @@ $SITE_FOOTER_JS     = array();
 $accion_del_sitio_a_incluir     = null;
 $proceso_del_sitio_a_incluir    = null;
 $template                       = '';
-$request_uri                    = ( !empty($_GET['uri']) ) ? trim($_GET['uri'], '/') : null;
+$request_uri                    = ( !empty($_GET['uri']) ) ? trim($_GET['uri'], '/') : '';
 $es_proceso                     = false;
 
 if( !$request_uri ){
     $accion_del_sitio_a_incluir = 'home';
 }else{
 
-    $request_uri = array_shift(explode('.html', $request_uri));
+    $request_uri = explode('.html', $request_uri);
+    $request_uri = array_shift($request_uri);
 
     $request_uri = explode('/', $request_uri);
 
