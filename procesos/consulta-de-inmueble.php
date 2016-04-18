@@ -41,18 +41,6 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' && (int) $_POST['is_submit'] === 1 ){
     $PHPmailer->Subject = 'RHRRealState - Consulta del inmueble: ' . $inmueble['propiedad'] . ' en ' . $inmueble['operacion'];
     $PHPmailer->Body = $Smarty->fetch(PATH_TEMPLATES . 'emails/consulta-de-inmueble.tpl');
 
-    if( ENVIROMENT == 'local' ){
-        $PHPmailer->Timeout = 30;
-        $PHPmailer->IsSMTP();
-        $PHPmailer->SMTPDebug = 1;
-        $PHPmailer->Host = 'correo.almundo.com';
-        $PHPmailer->Port = 465;
-        $PHPmailer->SMTPSecure = "ssl";
-        $PHPmailer->SMTPAuth = true;
-        $PHPmailer->Username = "noreply@asatej.com.ar";
-        $PHPmailer->Password = "Y*UP16YXA_zZDUj$-d7";
-    }
-
     if($PHPmailer->Send()){
         $response   = array(
             'message'   => 'El email de consulta de inmueble fue enviado con éxito.', 
