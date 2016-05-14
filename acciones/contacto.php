@@ -32,17 +32,6 @@ if( isset($_POST['is_submit']) && (int) $_POST['is_submit'] == 1 ){
     $PHPmailer->Subject = 'RHRRealState - Contacto';
     $PHPmailer->Body = $Smarty->fetch(PATH_TEMPLATES . 'emails/contacto.tpl');
 
-    if( ENVIROMENT == 'local' ){
-        $PHPmailer->Timeout = 30;
-        $PHPmailer->IsSMTP();
-        $PHPmailer->SMTPDebug = 1;
-        $PHPmailer->Host = 'correo.almundo.com';
-        $PHPmailer->Port = 465;
-        $PHPmailer->SMTPSecure = "ssl";
-        $PHPmailer->SMTPAuth = true;
-        $PHPmailer->Username = "noreply@asatej.com.ar";
-        $PHPmailer->Password = "Y*UP16YXA_zZDUj$-d7";
-    }
 
     //send the message, check for errors
     $Smarty->assign(array(
