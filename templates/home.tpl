@@ -7,7 +7,7 @@
                 <div id="slider">
                     <ul>
                         {foreach from=$ofertas item=oferta}
-                            <li><a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}"><img class="img-style row1"  src="{$path_uploads}{$oferta.imagen}"  alt="" width="696px" height="241px" /></a></li>
+                            <li><a href="/{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}"><img class="img-style row1"  src="{$path_uploads}{$oferta.imagen}"  alt="" width="696px" height="241px" /></a></li>
                         {/foreach}
                     </ul>
 
@@ -17,34 +17,12 @@
         <div class="span4">
             <div class="wellside">
 
-                <h4><i style="padding-right:10px; margin-top:3px" class="icon-search"></i>Buscar propiedades</h4>
+                <h4><i style="padding-right:10px; margin-top:3px" class="icon-search"></i>{$lang.FORMULARIO_BUSQUEDA_TITULO}</h4>
                 <hr>
 
-                <form action="{$uri_prefix}" method="get">
-
+                <form action="/{$uri_prefix}" method="get">
                     <fieldset>
-<!--
-                        <input type="text" class="span3" placeholder="City and State, or Zip">
-                        <input type="text" class="span3" placeholder="Property ID">
-                        <div class="idealform">
-                            <select class="span3">
-                                <option>Price Range</option>
-                                <option>$100K - $300K </option>
-                                <option>$300K - $600K</option>
-                                <option>$600K - $900K</option>
-                                <option>$900K+</option>
-                            </select>
-                        </div>
-                        <select  class="span3">
-                            <option>Bedrooms</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4+</option>
-                        </select>
-    -->
-
-                        <h6>Propiedad tipo</h6>
+                        <h6>{$lang.FORMULARIO_BUSQUEDA_PROPIEDAD_TIPO}</h6>
                         <select name="tipo" class="span3" style="text-align: center;">
                             <option value="">::Todos::</option>
                             {foreach from=$tipos_propiedad item=tipo}
@@ -54,18 +32,7 @@
 
                         <br />
 
-                        {*
-                        <select name="zona" id="select01" class="span3" style="text-align: center;">
-                            <option value="">::Zona::</option>
-                            {foreach from=$localidades item=localidad}
-                                <option value="{$localidad.ubicacion}">{$localidad.ubicacion|lower|capitalize}</option>
-                            {/foreach}
-                        </select>
-
-                        <br />
-                        *}
-
-                        <h6>Tipo de operación</h6>
+                        <h6>{$lang.FORMULARIO_BUSQUEDA_TIPO_OPERACION}</h6>
                         <select name="operacion" class="span3" style="text-align: center;">
                             <option value="">::Todas::</option>
                             {foreach from=$operaciones item=operacion}
@@ -76,7 +43,7 @@
                         <br />
 
                         <input type="hidden" name="uri" value="listado-de-inmuebles.html" />
-                        <button type="submit" class="btn btn-warning">Buscar</button>
+                        <button type="submit" class="btn btn-info">{$lang.FORMULARIO_BUSQUEDA_BUSCAR}</button>
 
                     </fieldset>
 
@@ -104,7 +71,7 @@
                     <p>{$oferta.descripcion|lower|truncate:320:"...":true}</p>
                     <br />
                     <p>
-                        <a href="{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}" class="btn btn-warning">Más info</a>
+                        <a href="/{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}" class="btn btn-info">Más info</a>
                     </p>
                 </div>
             </div>

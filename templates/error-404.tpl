@@ -14,7 +14,7 @@
                     <p>Página no encontrada. Por favor regresa a la página de inicio.</p>
                     <br>
                     <p>
-                        <a href="{$uri_prefix}" class="btn btn-primary btn-large">
+                        <a href="/{$uri_prefix}" class="btn btn-primary btn-large">
                             Regresar
                         </a>
                     </p></div>

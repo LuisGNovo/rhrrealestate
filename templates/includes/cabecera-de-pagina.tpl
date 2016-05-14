@@ -52,16 +52,17 @@
             $('a[name="seleccionar-idioma"]').click(function(){
                 var lang = $(this).attr('rel');
                 $.ajax({
-                    url: '{$uri_prefix}?uri=procesos/setear-idioma',
+                    url: '/{$uri_prefix}?uri=procesos/setear-idioma',
                     type: 'GET',
                     dataType: 'json',
                     cache: false,
-                    data: { lang:lang},
-                    success: function(data){
-                        location.reload(true);
+                    data: { lang:lang },
+                    complete: function(){
+                        window.location.reload(true);
                     },
-                    timeout: 3000  // (1000=1 segundo)
+                    timeout: 1000  // (1000=1 segundo)
                 });
+                return false;
             });
 
         });
@@ -82,23 +83,10 @@
         {/if}
     </style>
 
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-
-    <!-- Le fav and touch icons -->
-
-    {* <link rel="shortcut icon" href="">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-    *}
-
-
 </head>
 
 <body>
@@ -111,28 +99,30 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="{$uri_prefix}">RHR Real Estate </a>
+            <a class="brand" href="/{$uri_prefix}">RHR Real Estate </a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li><a href="{$uri_prefix}">Inicio</a></li>
-                    <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">Ventas</a></li>
-                    <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">Alquileres</a></li>
-                    <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">Alquileres temporarios</a></li>
-                    <li><a href="{$uri_prefix}?uri=formulario-de-contacto.html">Contacto</a></li>
-                    <li><a href="{$uri_prefix}?uri=acerca-de-nosotros.html">Nosotros</a></li>
+                    <li><a href="/{$uri_prefix}">{$lang.NAV_BAR_INICIO}</a></li>
+                    <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">{$lang.NAV_BAR_VENTAS}</a></li>
+                    <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">{$lang.NAV_BAR_ALQUILERES}</a></li>
+                    <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">{$lang.NAV_BAR_ALQUILERES_TEMPORARIOS}</a></li>
+                    {*<li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;premium">Premium</a></li>*}
+                    <li><a href="/{$uri_prefix}?uri=formulario-de-contacto.html">{$lang.NAV_BAR_CONTACTO}</a></li>
+                    <li><a href="/{$uri_prefix}?uri=acerca-de-nosotros.html">{$lang.NAV_BAR_NOSOTROS}</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Más
+                            {$lang.NAV_BAR_MAS}
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{$uri_prefix}">Inicio</a></li>
-                            <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">Ventas</a></li>
-                            <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">Alquileres</a></li>
-                            <li><a href="{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">Alquileres temporarios</a></li>
+                            <li><a href="/{$uri_prefix}">{$lang.NAV_BAR_INICIO}</a></li>
+                            <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Venta">{$lang.NAV_BAR_VENTAS}</a></li>
+                            <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler">{$lang.NAV_BAR_ALQUILERES}</a></li>
+                            <li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;operacion=Alquiler+Temporario">{$lang.NAV_BAR_ALQUILERES_TEMPORARIOS}</a></li>
+                            {*<li><a href="/{$uri_prefix}?uri=listado-de-inmuebles.html&amp;premium">Premium</a></li>*}
                             <li class="divider"></li>
-                            <li><a href="{$uri_prefix}?uri=formulario-de-contacto.html">Contacto</a></li>
-                            <li><a href="{$uri_prefix}?uri=acerca-de-nosotros.html">Nosotros</a></li>
+                            <li><a href="/{$uri_prefix}?uri=formulario-de-contacto.html">{$lang.NAV_BAR_CONTACTO}</a></li>
+                            <li><a href="/{$uri_prefix}?uri=acerca-de-nosotros.html">{$lang.NAV_BAR_NOSOTROS}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -140,7 +130,7 @@
                     <li><a href="#">{$lang.NOMBRE_IDIOMA_CURRENT}</a></li>
                     <li class="divider-vertical"></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$lang.NOMBRE_IDIOMA_LENGUAJE} <b class="caret"></b></a>
 
 
                         <ul class="dropdown-menu">

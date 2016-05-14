@@ -10,10 +10,10 @@
 session_start();
 
 // Seteo el idioma
-if( !isset($_SESSION['LANGUAGE_CODE']) OR !in_array($_SESSION['LANGUAGE_CODE'], array('EN')) ){
+if( !isset($_SESSION['LANGUAGE_CODE']) OR !in_array($_SESSION['LANGUAGE_CODE'], array('en')) ){
     $language_code = $_SESSION['LANGUAGE_CODE'] = '';
 }else{
-    $language_code = $SESSION['LANGUAGE_CODE'];
+    $language_code = $_SESSION['LANGUAGE_CODE'];
 }
 
 //*******************************************************
@@ -120,7 +120,7 @@ if( $es_proceso === false && !empty($template) && $Smarty->templateExists($templ
     // Agrego los css's y js's
     $Smarty->assign(array(
         // ********
-        'uri_prefix'        => '/' . trim(URI_PREFIX, '/'), 
+        'uri_prefix'        => trim(URI_PREFIX, '/'), 
         'path_imagenes'     => PATH_IMAGENES,
         'path_uploads'      => PATH_UPLOADS,
 

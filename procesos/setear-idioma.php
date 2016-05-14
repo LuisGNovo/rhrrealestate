@@ -1,11 +1,9 @@
 <?php
-session_start();
-
 $langs = array('ES', 'EN');
 $lang = $_GET['lang'];
 
 if( in_array($lang, $langs) ){
-    $_SESSION['LANGUAGE_CODE'] = $lang;
+    $_SESSION['LANGUAGE_CODE'] = mb_strtolower($lang);
 }
-echo $lang;
+exit();
 ?>
