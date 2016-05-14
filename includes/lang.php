@@ -33,6 +33,17 @@ $texto['es']    = array(
     'CONTACTENOS'               => 'Contactenos', 
     'ACERCA_DE_NOSOTROS'        => 'About us', 
     'CONTINUAR_LEYENDO'         => 'Continuar leyendo', 
+
+    // Contacto
+    'CONTACTO_SUBTITULO'        => 'Dejenos su Consulta. Le responderemos a la brevedad.', 
+    'CONTACTO_NOMBRE'           => 'Nombre', 
+    'CONTACTO_APELLIDO'         => 'Apellido', 
+    'CONTACTO_EMAIL'            => 'Email', 
+    'CONTACTO_TELEFONO'         => 'Teléfono', 
+    'CONTACTO_MENSAJE'          => 'Mensaje', 
+    'CONTACTO_ENVIAR'           => 'Enviar', 
+    'CONTACTO_ENVIO_OK'         => '<strong>Gracias por escribirnos!</strong> Nos pondremos en contacto con usted a la mayor brevedad posible.', 
+    'CONTACTO_ENVIO_ERROR'      => '<strong>Error!</strong> El email no pudo ser enviado.', 
     );
 $texto['en']    = array(
     // Idioma
@@ -60,6 +71,17 @@ $texto['en']    = array(
     'CONTACTENOS'               => 'Contact us', 
     'ACERCA_DE_NOSOTROS'        => 'About us', 
     'CONTINUAR_LEYENDO'         => 'Continue reading', 
+
+    // Contacto
+    'CONTACTO_SUBTITULO'        => 'Leave us your message below.', 
+    'CONTACTO_NOMBRE'           => 'Name', 
+    'CONTACTO_APELLIDO'         => 'Sudname', 
+    'CONTACTO_EMAIL'            => 'Email', 
+    'CONTACTO_TELEFONO'         => 'Phone', 
+    'CONTACTO_MENSAJE'          => 'Message', 
+    'CONTACTO_ENVIAR'           => 'Send', 
+    'CONTACTO_ENVIO_OK'         => '<strong>Thank you for wrote us!</strong>', 
+    'CONTACTO_ENVIO_ERROR'      => '<strong>Error!</strong> The email could\'t be send.', 
     );
 
 $Smarty->assign('lang', $texto[$idioma]);
