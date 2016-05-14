@@ -71,7 +71,7 @@
                     <p>{$oferta.descripcion|lower|truncate:320:"...":true}</p>
                     <br />
                     <p>
-                        <a href="/{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}" class="btn btn-info">Más info</a>
+                        <a href="/{$uri_prefix}?uri=detalle-inmueble.html&amp;id={$oferta.id}" class="btn btn-info">{$lang.MAS_INFORMACION}</a>
                     </p>
                 </div>
             </div>

@@ -44,6 +44,8 @@ $texto['es']    = array(
     'CONTACTO_ENVIAR'           => 'Enviar', 
     'CONTACTO_ENVIO_OK'         => '<strong>Gracias por escribirnos!</strong> Nos pondremos en contacto con usted a la mayor brevedad posible.', 
     'CONTACTO_ENVIO_ERROR'      => '<strong>Error!</strong> El email no pudo ser enviado.', 
+
+    'MAS_INFORMACION'           => 'Más información', 
     );
 $texto['en']    = array(
     // Idioma
@@ -82,6 +84,8 @@ $texto['en']    = array(
     'CONTACTO_ENVIAR'           => 'Send', 
     'CONTACTO_ENVIO_OK'         => '<strong>Thank you for wrote us!</strong>', 
     'CONTACTO_ENVIO_ERROR'      => '<strong>Error!</strong> The email could\'t be send.', 
+
+    'MAS_INFORMACION'           => 'More information', 
     );
 
 $Smarty->assign('lang', $texto[$idioma]);
